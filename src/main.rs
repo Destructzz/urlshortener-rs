@@ -18,7 +18,7 @@ async fn main() -> Result {
     let app = routes::create_router();
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    info!("Listening on http://{}", addr);
+    info!("By visiting http://{addr}/ you should see the API documentation");
 
     let listener = TcpListener::bind(addr).await?;
     axum::serve(listener, app).await?;
