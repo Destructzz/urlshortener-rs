@@ -12,6 +12,6 @@ struct ApiDoc;
 
 pub fn create_router() -> Router {
     Router::new()
-        .merge(Scalar::with_url("/docs", ApiDoc::openapi()))
+        .merge(Scalar::with_url("/", ApiDoc::openapi()))
         .layer(tower_http::trace::TraceLayer::new_for_http())
 }
